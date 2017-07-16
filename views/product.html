@@ -1,0 +1,11 @@
+{% extends 'layout.html' %} {% block title %}ACME - Product - {{ product.name }}{% endblock %} {% block content %}
+<a href='/products'>All Products</a>
+<h1>{{ product.name }}</h1>
+<div class="well">
+    {{ product.rating }}
+    <br />
+    <form action='/products/{{ product.id}}?_method=DELETE' method='POST'>
+        <button class='btn btn-danger'>Delete</button>
+    </form>
+</div>
+{% endblock %}

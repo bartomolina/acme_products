@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {% block title %}ACME - All Products{% endblock %} {% block content %}
+<a href='/'>Home</a>
+<h1>Products</h1>
+<div class='well'>
+    <form action='/products' method='POST'>
+        <div class='form-group'>
+            <input class='form-control' name='name' placeholder='name' />
+        </div>
+        <div class='form-group'>
+            <input class='form-control' name='rating' placeholder='rating' />
+        </div>
+        <div class='form-group'>
+            <button class='btn btn-primary'>Save</button>
+        </div>
+    </form>
+</div>
+<ul class='list-group'>
+    {% for product in products %}
+    <li class='list-group-item'>
+        <a href='/products/{{ product.id }}'>{{ product.name }}</a>
+        <span class="badge">{{ product.rating }}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

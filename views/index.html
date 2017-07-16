@@ -1,0 +1,9 @@
+{% extends 'layout.html' %} {% block title %}ACME - Home{% endblock %} {% block content %}
+<h1>Acme Products</h1>
+<div class='well'>
+    Welcome to Acme Products!! Our top selling product is
+    <a href='/products/{{ topRatedProduct.id  }}'>{{ topRatedProduct.name }}</a>
+    <br />
+    <a href='/products'>See all of our products!</a>
+</div>
+{% endblock %}
